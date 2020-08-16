@@ -1,24 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Tree, { Person } from './components/Tree';
 
 function App() {
+  const mother = new Person("Inconnue", "Danze"),
+    father = new Person("Darija", "Danze", mother);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tree tree={[{ father, children: [new Person("Ridjvan", "Danze")] }]} />
     </div>
   );
 }
